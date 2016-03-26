@@ -1,0 +1,19 @@
+TICKET: 5, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Inside /view/__init__.py create a function display(file) that reads the
+      contents of file, and hands it to the display template, and returns the
+      results.
+
+TICKET: 4, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Inside /view create /template directory.
+  - Add TICKET 3 master template to /template dir.
+
+TICKET: 3, COMPETED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Create a basic placeholder master template.
+
+TICKET: 2, COMPLETED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Create a model, a view, and a controller directories; each with a __init__.py
+    file to convert to to a model.
+
+TICKET: 1, COMPLETED: Mar/26/2016, AUTHOR: Ben Knisley
+    Setup Minimal Flask Application
+      - Create a controller.py that runs a minimal Flask app.

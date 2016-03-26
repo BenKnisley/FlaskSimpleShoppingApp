@@ -1,0 +1,4 @@
+TICKET: 5, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Create a new template called display extending the master.
+    * The display template is the most simple, it simple displays what is handed
+      to it.

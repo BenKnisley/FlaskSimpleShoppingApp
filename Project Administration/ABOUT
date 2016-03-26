@@ -1,0 +1,17 @@
+Project Name: Nimbus Web Simple Shopping Web App
+Authors:
+	- Ben Knisley [benknisley@gmail.com]
+Initial Date:  24, March 2016
+
+Description:
+A good looking, easy to use, and functional web app for buying and selling
+products.
+
+Scope and Goals:
+	- A good looking design
+	- Various static pages
+	- A index page for each product category
+	- A overview page for each product
+	- A shopping cart and method for checkout
+	- A method for adding removing and changing products
+	- Automatic stat collection and viewing.
