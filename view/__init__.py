@@ -12,17 +12,17 @@ This file holds and controls all functions and objects related to the view. For
 from flask import render_template
 
 
-def display(file):
+def display(title, file):
     """
-    This is the render function for the display set of pages (home, legal,
-        contact, etc). It is the simplest, it is handed an html file path and it
-        passes the contents to the display template, and returns the result.
+    This is the render function for the display set of pages (home, legal, contact, etc).
+        It is the simplest, it is handed a page title and a html file path and it passes
+        them to the display template, and returns the result.
     """
     ## Extract html out of given file
     html = open(file, 'r').read()
 
     ## Pass html to display template and update it to the rendered content.
-    html = render_template("display.html", content=html)
+    html = render_template("display.html", title=title, content=html)
 
     ## Return
     return html

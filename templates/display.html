@@ -1,7 +1,9 @@
 {% extends "master.html" %}
-{% block title %}
-  Display
-{% endblock %}
+
+{% block title %} {{title|safe}} {% endblock %}
+
+{% block heading %} {{title|safe}} {% endblock %}
+
 {% block content %}
   {{content|safe}}
 {% endblock %}

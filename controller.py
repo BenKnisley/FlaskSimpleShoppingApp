@@ -20,12 +20,10 @@ app = Flask(__name__)
 ## Set app varibles
 app.config['template_folder'] = '/templates'
 
-
 ## The index route
 @app.route('/')
 def index():
-    return view.display("/home/ben/Desktop/yolo")
-
+    return view.display("Yolo", "/home/ben/Desktop/yolo")
 
 ## Run Application
 if __name__ == '__main__':
