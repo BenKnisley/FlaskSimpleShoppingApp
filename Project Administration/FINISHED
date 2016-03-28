@@ -1,3 +1,7 @@
+TICKET: 10, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Remove /controller dir.
+
+
 TICKET: 5, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
   - Inside /view/__init__.py create a function display(file) that reads the
       contents of file, and hands it to the display template, and returns the
