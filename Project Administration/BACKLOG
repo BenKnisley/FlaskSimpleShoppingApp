@@ -1,8 +1,4 @@
 
-TICKET: 6, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
-  - Document all files better. Comment all the code, and write a header for each
-    file.
-
 TICKET: 7, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
   - Create a product class in its own file in the model folder.
   - Include everything you want to include in the database.
