@@ -11,3 +11,14 @@ This file holds and controls all functions and objects related to the model.
 """
 ## Import sqlite
 import sqlite3
+
+## Import product class
+import product
+
+
+def productExist(ID):
+    return False
+
+def getProductByID(ID):
+    ## Return dummy product
+    return product.product("PRODUCT_5688", "Apple", "A big red apple." "250")
