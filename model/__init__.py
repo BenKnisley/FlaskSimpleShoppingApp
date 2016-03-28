@@ -9,3 +9,5 @@ This file holds and controls all functions and objects related to the model.
     For example it holds the functions getProductByID(), sessionExist(), etc.
     This file should be writen so that the database backend can be switch quickly.
 """
+## Import sqlite
+import sqlite3
