@@ -25,6 +25,12 @@ app.config['template_folder'] = '/templates'
 def index():
     return view.display("Yolo", "/home/ben/Desktop/yolo")
 
+@app.route('/product')
+def product():
+    product = model.getProductByID("PRODUCT_4411")
+    return product.name
+
+
 ## Run Application
 if __name__ == '__main__':
     app.run(debug=True)

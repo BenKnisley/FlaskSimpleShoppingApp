@@ -1,6 +1,6 @@
-
-TICKET: 8, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
-  - Add a dummy getProductByID(ID) that returns a single dummy object object.
+TICKET: 11, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Build product template to display a product from the datbase
+  - Add product function in view to call on real
 
 TICKET: 9, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
   - Add some type of project management, such as make to start server, and

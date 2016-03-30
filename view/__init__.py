@@ -26,3 +26,10 @@ def display(title, file):
 
     ## Return
     return html
+
+
+def product():
+    """
+    """
+    ## Get product object fr
+    None

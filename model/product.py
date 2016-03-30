@@ -9,7 +9,6 @@ This file holds a class representing the product in the database.
 
 ## Define product class
 class product:
-
     ## product constructor
     def __init__(self, ID, name, desc, price ):
         ## set product attrubutes from args
