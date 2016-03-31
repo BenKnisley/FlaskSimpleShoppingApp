@@ -30,9 +30,12 @@ def display(title, file):
 
 def product(product):
     """
+    This is the render function for the product page.
+        This function takes a product object, feeds it to the product template,
+        and returns the result.
     """
-    ## Get product object fr
-    html = render_template("product.html", title="Hello World", product=product)
+    ## Route given product object to product template
+    html = render_template("product.html", product=product)
 
-    ## Returns
+    ## Returns result
     return html

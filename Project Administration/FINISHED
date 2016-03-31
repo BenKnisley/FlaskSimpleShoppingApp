@@ -1,3 +1,6 @@
+TICKET: 12, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Add view.product() to process input and route output for product template.
+
 TICKET: 11, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
   - Build product template to display a product from the database
     - Make it take a product object.
