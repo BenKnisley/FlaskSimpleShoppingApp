@@ -20,7 +20,7 @@ app = Flask(__name__)
 ## Set app varibles
 app.config['template_folder'] = '/templates'
 
-## The index route
+## The home route
 @app.route('/')
 def index():
     return view.display("Yolo", "/home/ben/Desktop/yolo")
