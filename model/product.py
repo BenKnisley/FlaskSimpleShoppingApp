@@ -9,10 +9,19 @@ This file holds a class representing the product in the database.
 
 ## Define product class
 class product:
-    ## product constructor
-    def __init__(self, ID, name, desc, price ):
+    def __init__(self, ID, name, desc, price):
         ## set product attrubutes from args
         self.ID = ID
         self.name = name
         self.description = desc
         self.price = price
+
+    def getPriceStr(self):
+        cents = self.price
+        if cents > 100:
+            return str('{:20,.2f}'.format(cents/100)).strip()
+        else:
+            if cents > 10:
+                return '0.' + str(cents)
+            else:
+                return '0.0' + str(cents)

@@ -1,7 +1,14 @@
-TICKET: 11, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
-  - Build product template to display a product from the datbase
-  - Add product function in view to call on real
+TICKET: 12, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Add view.product() to process input and route output for product template.
 
-TICKET: 9, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
-  - Add some type of project management, such as make to start server, and
-    update git.
+TICKET: 13, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
+  - Create SQLite database for project.
+  - Add product table.
+  - Add 10 products.
+
+TICKET: 14, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
+  - Convert model.getProductByID() function to query SQL database.
+
+TICKET: 15, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
+  - Convert product route to take arg in url, and display that product.
+  - Redirect to 404 page if not found.

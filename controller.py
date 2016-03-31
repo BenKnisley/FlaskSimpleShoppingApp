@@ -25,10 +25,11 @@ app.config['template_folder'] = '/templates'
 def index():
     return view.display("Yolo", "/home/ben/Desktop/yolo")
 
+## The Product route
 @app.route('/product')
 def product():
     product = model.getProductByID("PRODUCT_4411")
-    return product.name
+    return view.product(product)
 
 
 ## Run Application

@@ -1,0 +1,11 @@
+{% extends "master.html" %}
+
+{% block title %} {{product.name|safe}} {% endblock %}
+
+{% block heading %} {{product.name|safe}} {% endblock %}
+
+{% block content %}
+  <h1>{{product.name|safe}}</h1>
+  <p>{{product.description|safe}}</p>
+  <p color="blue">${{product.getPriceStr()|safe}}</p>
+{% endblock %}

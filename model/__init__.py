@@ -17,8 +17,8 @@ import product
 
 
 def productExist(ID):
-    return False
+    return True
 
 def getProductByID(ID):
     ## Return dummy product
-    return product.product("PRODUCT_5688", "Apple", "A big red apple." "250")
+    return product.product("PRODUCT_4411", "Apple", "A big red fruit.", 75)

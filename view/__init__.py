@@ -28,8 +28,11 @@ def display(title, file):
     return html
 
 
-def product():
+def product(product):
     """
     """
     ## Get product object fr
-    None
+    html = render_template("product.html", title="Hello World", product=product)
+
+    ## Returns
+    return html

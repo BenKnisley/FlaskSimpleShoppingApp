@@ -1,3 +1,7 @@
+TICKET: 11, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
+  - Build product template to display a product from the database
+    - Make it take a product object.
+
 TICKET: 8, CREATED: Mar/26/2016, AUTHOR: Ben Knisley
   - Add a dummy getProductByID(ID) that returns a single dummy object.
 
