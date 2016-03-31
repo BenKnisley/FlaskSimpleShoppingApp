@@ -1,6 +1,15 @@
-TICKET: 14, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
-  - Convert model.getProductByID() function to query SQL database.
-
 TICKET: 15, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
+  - Make product exist work.
+  - Make product route query if product exists.
+
+TICKET: 16, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
   - Convert product route to take arg in url, and display that product.
   - Redirect to 404 page if not found.
+
+TICKET: 17, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
+  - Add a tools directory
+  - Add spawn database exe
+
+
+TODO:
+ - Remove hardcode to SQLite file from model.

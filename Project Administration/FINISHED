@@ -1,3 +1,6 @@
+TICKET: 14, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
+  - Convert model.getProductByID() function to query SQL database.
+
 TICKET: 13, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
   - Create SQLite database for project.
   - Add product table.
