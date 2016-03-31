@@ -26,11 +26,10 @@ def index():
     return view.display("Yolo", "/home/ben/Desktop/yolo")
 
 ## The Product route
-@app.route('/product')
-def product():
-    ID = "PRODUCT_441"
-    if model.productExist(ID):
-        product = model.getProductByID(ID)
+@app.route('/product/<productID>')
+def product(productID):
+    if model.productExist(productID):
+        product = model.getProductByID(productID)
         return view.product(product)
     else:
         abort(404)

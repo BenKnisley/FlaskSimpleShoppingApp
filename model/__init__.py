@@ -36,10 +36,6 @@ def productExist(ID): ## Read Only
     else:
         return False
 
-
-
-
-
 def getProductByID(ID): ## Read only
     ## Create database connection and cursor
     conn = sqlite3.connect(SQL_FILE)
