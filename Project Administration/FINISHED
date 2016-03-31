@@ -1,3 +1,8 @@
+MILESTONE: The whole product system works!
+  - Controller takes ID from url.
+  - Model returns its existence and its data.
+  - View renders it to display. 
+
 TICKET: 16, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
   - Convert product route to take arg in url, and display that product.
   - Redirect to 404 page if not found.
