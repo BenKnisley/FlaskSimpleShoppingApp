@@ -20,8 +20,25 @@ SQL_FILE = "/home/ben/Desktop/ProductWebApp/model/database.db"
 import product
 
 
-def productExist(ID):
-    return True
+def productExist(ID): ## Read Only
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
+
+    ## Setup query
+    query = "SELECT EXISTS(SELECT 1 FROM products WHERE ID='%s');" % (ID)
+    ## Send query to database
+    sql.execute(query)
+
+    ## Extract and return data
+    if sql.fetchone()[0] == 1:
+        return True
+    else:
+        return False
+
+
+
+
 
 def getProductByID(ID): ## Read only
     ## Create database connection and cursor
@@ -33,15 +50,11 @@ def getProductByID(ID): ## Read only
     ## Send query to database
     sql.execute(query)
 
-    ## Extract all entrys
-    rows = sql.fetchall()
-
-    ## Get data from rows
-    for row in rows:
-        data = row
+    ## Get data from query
+    data = sql.fetchone()
 
     ## Create product from data
     retnProduct = product.product(data[0], data[1], data[2], data[3])
 
-    ## Return dummy product
+    ## Return product
     return retnProduct
