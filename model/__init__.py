@@ -14,7 +14,7 @@ import sqlite3
 
 ## Make path to database global
 #! Do best to remove hardcode
-SQL_FILE = "/home/ben/Desktop/ProductWebApp/model/database.db"
+SQL_FILE = "./model/database.db"
 
 ## Import product class
 import product
