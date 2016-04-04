@@ -2,7 +2,6 @@ TICKET: 20, Completed: Apr/4/2016, AUTHOR: Ben Knisley
   - Create a index route that returns a list of names of products returned by
      model.returnAllProducts.
 
-
 TICKET: 19, CREATED: Apr/3/2016, AUTHOR: Ben Knisley
   - Create model.returnAllProducts that returns a list of all products.
 
