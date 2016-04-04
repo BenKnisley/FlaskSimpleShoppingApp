@@ -1,6 +1,3 @@
-TICKET: 19, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
-  - Create a dummy model.returnAllProducts that returns a list of products.
-
 TICKET: 20, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
   - Create a index route that returns a list of names of products returned by
      model.returnAllProducts.
