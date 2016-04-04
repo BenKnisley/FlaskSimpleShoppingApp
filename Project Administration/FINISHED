@@ -1,7 +1,14 @@
+TICKET: 18, CREATED: Apr/2/2016, AUTHOR: Ben Knisley
+  - Add a col in products table for class product relations.
+  - Used json for each tag.
+
+TICKET: 17, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
+  - Add 5 to 15 new products on a different class than fruits.
+
 MILESTONE: The whole product system works!
   - Controller takes ID from url.
   - Model returns its existence and its data.
-  - View renders it to display. 
+  - View renders it to display.
 
 TICKET: 16, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
   - Convert product route to take arg in url, and display that product.

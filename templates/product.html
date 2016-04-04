@@ -8,4 +8,11 @@
   <h1>{{product.name|safe}}</h1>
   <p>{{product.description|safe}}</p>
   <p color="blue">${{product.getPriceStr()|safe}}</p>
+  <p>Tags:
+
+  {% for tag in product.tags %}
+    {{tag}}
+  {% endfor %}
+
+  </p>
 {% endblock %}

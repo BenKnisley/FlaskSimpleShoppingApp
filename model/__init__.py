@@ -50,7 +50,7 @@ def getProductByID(ID): ## Read only
     data = sql.fetchone()
 
     ## Create product from data
-    retnProduct = product.product(data[0], data[1], data[2], data[3])
+    retnProduct = product.product(data[0], data[1], data[2], data[3], data[4])
 
     ## Return product
     return retnProduct

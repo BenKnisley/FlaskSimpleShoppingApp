@@ -1,9 +1,3 @@
-TICKET: 17, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
-  - Add 5 to 15 new products on a different class than fruits.
-
-TICKET: 18, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
-  - Add a table for class product relations.
-
 TICKET: 19, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
   - Create a dummy model.returnAllProducts that returns a list of products.
 
@@ -14,7 +8,9 @@ TICKET: 20, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
 TICKET: 20, CREATED: Mar/31/2016, AUTHOR: Ben Knisley
   - Build a index template, that displays all products feed into it.
 
+TICKET: 21, CREATED: Apr/2/2016, AUTHOR: Ben Knisley
+  - Document the product class.
+
 
 TODO:
- - Remove hardcode to SQLite file from model.
  - Add tools directory
