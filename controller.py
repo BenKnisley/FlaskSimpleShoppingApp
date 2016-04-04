@@ -34,6 +34,14 @@ def product(productID):
     else:
         abort(404)
 
+@app.route('/test')
+def test():
+    x = model.getAllProducts()
+    string = ""
+    for y in x:
+        string += y.name
+        string += "<br>"
+    return string
 
 ## Run Application
 if __name__ == '__main__':

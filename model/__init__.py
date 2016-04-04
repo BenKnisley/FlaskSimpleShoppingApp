@@ -36,6 +36,29 @@ def productExist(ID): ## Read Only
     else:
         return False
 
+def getAllProducts():
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
+
+    ## Setup query
+    query = "SELECT * FROM products;"
+    ## Send query to database
+    sql.execute(query)
+
+    ## Get data from query
+    entrys = sql.fetchall()
+
+    ## Create return set
+    retn = set()
+
+    ## For each entry create product from data
+    for data in entrys:
+        retn.add( product.product(data[0], data[1], data[2], data[3], data[4]) )
+
+    ## Return ste of products
+    return retn
+
 def getProductByID(ID): ## Read only
     ## Create database connection and cursor
     conn = sqlite3.connect(SQL_FILE)

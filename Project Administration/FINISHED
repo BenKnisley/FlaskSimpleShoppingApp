@@ -1,3 +1,6 @@
+TICKET: 19, CREATED: Apr/3/2016, AUTHOR: Ben Knisley
+  - Create model.returnAllProducts that returns a list of all products.
+
 TICKET: 18, CREATED: Apr/2/2016, AUTHOR: Ben Knisley
   - Add a col in products table for class product relations.
   - Used json for each tag.
