@@ -23,7 +23,7 @@ app.config['template_folder'] = '/templates'
 ## The home route
 @app.route('/')
 def index():
-    return view.display("Yolo", "/home/ben/Desktop/yolo")
+    return view.display("Yolo", "./model/textFiles/home.html")
 
 ## The Product route
 @app.route('/product/<productID>')
