@@ -26,6 +26,7 @@ class product:
 
     def getPriceStr(self):
         """
+        Converts self.price from int to a string in the 0.00 format of currency.
         """
         cents = self.price
         if cents > 100:
