@@ -1,7 +1,3 @@
-TICKET: 22, CREATED: Apr/4/2016, AUTHOR: Ben Knisley
-  - Add a index template that displays a list of product given to it via a
-    list of product objects.
-
 TICKET: 23, CREATED: Apr/4/2016, AUTHOR: Ben Knisley
   - Add route that displays an index of a certain class.
 

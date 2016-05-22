@@ -34,9 +34,9 @@ class product:
         cents = self.price
 
         ## If the value above dollar
-        if cents > 100:
+        if cents > 99:
             ## Return string with format <dollar>.<cents w/ 2 dec points>
-            return str('{:20,.2f}'.format(cents/100)).strip()
+            return str('{:20,.2f}'.format(cents/100.00)).strip()
 
         ## If price below a dollar
         else:
