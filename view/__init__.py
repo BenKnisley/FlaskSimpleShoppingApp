@@ -39,3 +39,13 @@ def product(product):
 
     ## Returns result
     return html
+
+
+def productIndex(title, products):
+    """
+    """
+    ## Route given title and products list to productIndex template
+    html = render_template("productIndex.html", title=title, products=products)
+
+    ## Returns result
+    return html

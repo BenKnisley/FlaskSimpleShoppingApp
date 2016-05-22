@@ -37,11 +37,7 @@ def product(productID):
 @app.route('/test')
 def test():
     x = model.getAllProducts()
-    string = ""
-    for y in x:
-        string += y.name
-        string += "<br>"
-    return string
+    return view.productIndex("All Products", x)
 
 ## Run Application
 if __name__ == '__main__':
