@@ -49,13 +49,11 @@ def getAllProducts():
     ## Get data from query
     entrys = sql.fetchall()
 
-    ## Create return set
-    #retn = set()
+    ## Create return list
     retn = list()
 
     ## For each entry create product from data
     for data in entrys:
-        #retn.add( product.product(data[0], data[1], data[2], data[3], data[4]) )
         retn.append( product.product(data[0], data[1], data[2], data[3], data[4]) )
 
     ## Return ste of products

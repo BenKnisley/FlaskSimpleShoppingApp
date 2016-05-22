@@ -36,8 +36,11 @@ def product(productID):
 
 @app.route('/test')
 def test():
-    x = model.getAllProducts()
-    return view.productIndex("All Products", x)
+    ## Get a list
+    allProducts = model.getAllProducts()
+
+    allProducts = sorted(allProducts, key=lambda product: product.name)
+    return view.productIndex("All Products", allProducts)
 
 ## Run Application
 if __name__ == '__main__':
