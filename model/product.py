@@ -13,9 +13,10 @@ import json
 ## Define product class
 class product:
     """
-    Defines a products entry in the the database. Holds the direct data, and
-        functions to process data.
+    Defines a class for the products entry in the the database. Holds the direct
+    data, and functions to process data.
     """
+
     def __init__(self, ID, name, desc, price, tagJson):
         ## set product attrubutes from arguments
         self.ID = ID
@@ -26,21 +27,33 @@ class product:
 
     def getPriceStr(self):
         """
-        Converts self.price from int to a string in the 0.00 format of currency.
+        Returns the price (self.price stored as an int) as string in the 0.00
+            format
         """
+        ## Put the price value into new var
         cents = self.price
+
+        ## If the value above dollar
         if cents > 100:
+            ## Return string with format <dollar>.<cents w/ 2 dec points>
             return str('{:20,.2f}'.format(cents/100)).strip()
+
+        ## If price below a dollar
         else:
+            ## If larger than 10 cents
             if cents > 10:
+                ## Add 0. in front on cents
                 return '0.' + str(cents)
+
+            ## If less than a dollar
             else:
+                ## Add a 0.0 in front of cents
                 return '0.0' + str(cents)
 
     def _importTags(self, tagJson):
         """
         Parses the tags into a set from json format stored in the database.
-            Creates self.tags.
+            - Creates self.tags (no need to capture return)
         """
         ## Create return set
         self.tags = set()
