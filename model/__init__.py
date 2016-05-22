@@ -59,6 +59,22 @@ def getAllProducts():
     ## Return ste of products
     return retn
 
+def getProductsWTag(tag):
+    ## Call getAllProducts to get5 all products
+    allProducts = getAllProducts()
+
+    ## Create new list for tagged products
+    taggedProducts = list()
+
+    ## For each product if tag is in product.tags, add to taggedProducts
+    for product in allProducts:
+        if tag in product.tags:
+            taggedProducts.append(product)
+
+    ## Return taggedProducts
+    return taggedProducts
+
+
 def getProductByID(ID): ## Read only
     ## Create database connection and cursor
     conn = sqlite3.connect(SQL_FILE)

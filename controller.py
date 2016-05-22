@@ -9,7 +9,7 @@ querys the model, and sends data to the view.
 """
 
 ## Import Flask modules
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, request
 
 ## Import app modules
 import model, view
@@ -34,13 +34,24 @@ def product(productID):
     else:
         abort(404)
 
-@app.route('/test')
-def test():
-    ## Get a list
+@app.route('/test_allproducts')
+def allProducts():
+    ## Get a list of products
     allProducts = model.getAllProducts()
 
-    allProducts = sorted(allProducts, key=lambda product: product.name)
+    ## Send products to productIndex template and return result
     return view.productIndex("All Products", allProducts)
+
+@app.route('/test_taggedproducts')
+def taggedProducts():
+    ## Get tag
+    tag = request.args.get('tag')
+
+    ## Get a list of products
+    allProducts = model.getProductsWTag(tag )
+
+    ## Send products to productIndex template and return result
+    return view.productIndex( ("Products with tag '" + tag + "'"), allProducts)
 
 ## Run Application
 if __name__ == '__main__':
