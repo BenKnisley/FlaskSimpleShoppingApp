@@ -1,2 +1,4 @@
-TICKET: 24, CREATED: Apr/4/2016, AUTHOR: Ben Knisley
-  - Add a product entry template that is is one product entry.
+TICKET: 24, CREATED: May/22/2016, AUTHOR: Ben Knisley
+  - Add a get products by search method to model.
+  - Take a search query as a string.
+  - Return list of products
