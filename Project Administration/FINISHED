@@ -1,3 +1,6 @@
+TICKET: 24, CREATED: May/29/2016, AUTHOR: Ben Knisley
+- Add a link to product page in index template
+
 TICKET: 23, CREATED: Apr/4/2016, AUTHOR: Ben Knisley
   - Add route that displays an index of a certain tag.
 
