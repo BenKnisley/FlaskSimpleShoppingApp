@@ -1,3 +1,8 @@
+TICKET: 25, CREATED: May/22/2016, AUTHOR: Ben Knisley
+  - Add a get products by search method to model.
+  - Take a search query as a string.
+  - Return list of products
+
 TICKET: 24, CREATED: May/29/2016, AUTHOR: Ben Knisley
 - Add a link to product page in index template
 

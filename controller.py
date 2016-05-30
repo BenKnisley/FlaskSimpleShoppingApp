@@ -47,11 +47,32 @@ def taggedProducts():
     ## Get tag
     tag = request.args.get('tag')
 
+    ## If empty, call 404
+    if tag == None:
+        abort(404)
+
     ## Get a list of products
     allProducts = model.getProductsWTag(tag )
 
     ## Send products to productIndex template and return result
     return view.productIndex( ("Products with tag '" + tag + "'"), allProducts)
+
+
+@app.route('/test_search')
+def searchProducts():
+    ## Get query
+    query = request.args.get('q')
+
+    ## If empty, call 404
+    if query == None:
+        abort(404)
+
+
+    ## Get a list of products
+    products = model.getProductsBySearch(query)
+
+    ## Send products to productIndex template and return result
+    return view.productIndex( ("Search results for: '" + query + "'"), products)
 
 ## Run Application
 if __name__ == '__main__':

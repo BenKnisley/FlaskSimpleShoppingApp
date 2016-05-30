@@ -60,7 +60,7 @@ def getAllProducts():
     return retn
 
 def getProductsWTag(tag):
-    ## Call getAllProducts to get5 all products
+    ## Call getAllProducts to get all products
     allProducts = getAllProducts()
 
     ## Create new list for tagged products
@@ -74,6 +74,35 @@ def getProductsWTag(tag):
     ## Return taggedProducts
     return taggedProducts
 
+def getProductsBySearch(query):
+        ## Break down query into words
+        queryList = query.split()
+
+        ## Call getAllProducts to get all products
+        allProducts = getAllProducts()
+
+        ## Create list of results
+        results = list()
+
+        ## For each product
+        for product in allProducts:
+            ## For each word in queryList
+            for word in queryList:
+                ## If word is contained in name, add to results
+                if (word in product.name):
+                    results.append(product)
+                ## If word is contained in description, add to results
+                if (word in product.description):
+                    results.append(product)
+                ## If word is contained in tags, add to results
+                if (word in product.tags):
+                    results.append(product)
+
+        ## Remove duplicates from results
+        results = list(set(results))
+
+        ## return results
+        return results
 
 def getProductByID(ID): ## Read only
     ## Create database connection and cursor
