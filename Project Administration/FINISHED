@@ -1,3 +1,7 @@
+MILESTONE: App has complete product browsing system.
+  - Browse products by tags, searching, all products.
+  - Click on product, and displays product page.
+
 TICKET: 26, CREATED: May/29/2016, AUTHOR: Ben Knisley
   - On / page
     - Add link to all products.
