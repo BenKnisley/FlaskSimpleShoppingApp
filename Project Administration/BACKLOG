@@ -1,8 +1,1 @@
-TICKET: 25, CREATED: May/22/2016, AUTHOR: Ben Knisley
-  - Add a get products by search method to model.
-  - Take a search query as a string.
-  - Return list of products
-
-TICKET: 26, CREATED: May/29/2016, AUTHOR: Ben Knisley
-  - On / page, add link to all products.
-  - This is not meaningful, except that is give testing a fluid experience.
+ADD ITEMS TO BACKLOG

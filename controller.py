@@ -58,7 +58,7 @@ def taggedProducts():
     return view.productIndex( ("Products with tag '" + tag + "'"), allProducts)
 
 
-@app.route('/test_search')
+@app.route('/search')
 def searchProducts():
     ## Get query
     query = request.args.get('q')
