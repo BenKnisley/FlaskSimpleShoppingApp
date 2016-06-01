@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %} {{title|safe}} {% endblock %}
+
+{% block heading %} {{title|safe}} {% endblock %}
+
+{% block content %}
+
+<table border="1">
+{% for product in products %}
+    <tr>
+      <td> <a href='/product/{{product.ID}}'>{{product.ID}}</a> </td>
+      <td> {{product.name}} </td>
+      <td> ${{ product.getPriceStr() }} </td>
+      <td> {{ product.description }} </td>
+      <td> {% for tag in product.tags %} <b>{{tag}}</b> {% endfor %}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}
