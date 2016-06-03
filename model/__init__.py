@@ -10,7 +10,7 @@ This file holds and controls all functions and objects related to the model.
     This file should be writen so that the database backend can be switch quickly.
 """
 ## Import sqlite
-import sqlite3
+import sqlite3, random
 
 ## Make path to database global
 #! Do best to remove hardcode
@@ -124,5 +124,68 @@ def getProductByID(ID): ## Read only
     ## Return product
     return retnProduct
 
-
 ### VISITOR FUNCTIONS ###
+
+def visitor_exist(ID):
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
+
+    ## Setup query
+    query = "SELECT EXISTS(SELECT 1 FROM visitors WHERE ID='%s');" % (ID)
+    ## Send query to database
+    sql.execute(query)
+
+    ## Extract and return data
+    if sql.fetchone()[0] == 1:
+        return True
+    else:
+        return False
+
+def newVisitor():
+    ## Generate new visitorID
+
+    ## Create pool of chars and numbers to select from, abd lenght of ID
+    IDLen = 56
+    chars = 'abcdefghijklmnopqrstuvwxyz'
+    digits = '0123456789'
+
+    ## Get one random char, can't be digit
+
+    ## Create rest of string
+    randStr = ''.join(random.choice(chars + digits) for _ in range(IDLen - 7))
+    visitorID = 'visitor:' + randStr
+
+
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
+
+    ## Setup query
+    query = "INSERT INTO visitors VALUES ('%s')" % (visitorID)
+    ## Send query to database
+    sql.execute(query)
+
+    ## Add changes to database
+    conn.commit()
+
+    return visitorID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Fin

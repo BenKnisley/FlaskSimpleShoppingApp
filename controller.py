@@ -29,7 +29,9 @@ def processCookie(response):
     """
     visitCookie = request.cookies.get('visit')
     if visitCookie == None:
-        response.set_cookie('visit', '12345')
+        newVisitID = model.newVisitor()
+        print  "***" + request.remote_addr
+        response.set_cookie('visit', newVisitID)
     return response, visitCookie
 
 ############
