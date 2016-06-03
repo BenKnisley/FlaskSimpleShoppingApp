@@ -9,7 +9,7 @@ querys the model, and sends data to the view.
 """
 
 ## Import Flask modules
-from flask import Flask, render_template, abort, request
+from flask import Flask, render_template, abort, request, make_response, Response
 
 ## Import app modules
 import model, view
@@ -20,30 +20,89 @@ app = Flask(__name__)
 ## Set app varibles
 app.config['template_folder'] = '/templates'
 
+
+## Cookie function
+def processCookie(response):
+    """
+    Processes the request, if request doesnt have a visit cookie, creates a new
+        one. Function returns the request with a cookie, and the visit id.
+    """
+    visitCookie = request.cookies.get('visit')
+    if visitCookie == None:
+        response.set_cookie('visit', '12345')
+    return response, visitCookie
+
+############
+#$ Routes $#
+############
+
 ## The home route
 @app.route('/')
 def index():
-    return view.display("Yolo", "./model/textFiles/home.html")
+    ## Create new Response
+    response = Response()
+
+    ## Process cookie, and get cookied response and visitID
+    response, visitID = processCookie(response)
+
+    ## Generate Html from template and append to response
+    html = view.display("Welcome", "./model/textFiles/home.html")
+    response.set_data(html)
+
+    ## Return
+    return response
 
 ## The Product route
 @app.route('/product/<productID>')
 def product(productID):
+    ## If product exists, display product page
     if model.productExist(productID):
+
+        ## Create new Response
+        response = Response()
+
+        ## Process cookie, and get cookied response and visitID
+        response, visitID = processCookie(response)
+
+        ## Get product object from model
         product = model.getProductByID(productID)
-        return view.product(product)
+
+        ## Get html from view and product object
+        html = view.product(product)
+
+        ## Set response with html
+        response.set_data(html)
+
+        ## Return response
+        return response
+
+    ## If product does not exist, 404
     else:
         abort(404)
 
 @app.route('/test_allproducts')
 def allProducts():
+    ## Create new Response
+    response = Response()
+
+    ## Process cookie, and get cookied response and visitID
+    response, visitID = processCookie(response)
+
     ## Get a list of products
     allProducts = model.getAllProducts()
 
-    ## Send products to productIndex template and return result
-    return view.productIndex("All Products", allProducts)
+    ## Send products to productIndex template and get resultent html
+    html = view.productIndex("All Products", allProducts)
+
+    ## Set response with html
+    response.set_data(html)
+
+    ## Return response
+    return response
 
 @app.route('/test_taggedproducts')
 def taggedProducts():
+
     ## Get tag
     tag = request.args.get('tag')
 
@@ -51,12 +110,22 @@ def taggedProducts():
     if tag == None:
         abort(404)
 
+    ## Create new Response
+    response = Response()
+
+    ## Process cookie, and get cookied response and visitID
+    response, visitID = processCookie(response)
+
     ## Get a list of products
     allProducts = model.getProductsWTag(tag )
 
-    ## Send products to productIndex template and return result
-    return view.productIndex( ("Products with tag '" + tag + "'"), allProducts)
+    ## Generate html with product list
+    html = view.productIndex( ("Products with tag '" + tag + "'"), allProducts)
 
+    ## Set response with html
+    response.set_data(html)
+
+    return response
 
 @app.route('/search')
 def searchProducts():
@@ -67,12 +136,24 @@ def searchProducts():
     if query == None:
         abort(404)
 
+    ## Create new Response
+    response = Response()
+
+    ## Process cookie, and get cookied response and visitID
+    response, visitID = processCookie(response)
 
     ## Get a list of products
     products = model.getProductsBySearch(query)
 
-    ## Send products to productIndex template and return result
-    return view.productIndex( ("Search results for: '" + query + "'"), products)
+    ## Send products to productIndex template and get result
+    html = view.productIndex( ("Search results for: '" + query + "'"), products)
+
+    ## Set response with html
+    response.set_data(html)
+
+    ## Return response
+    return response
+
 
 ## Run Application
 if __name__ == '__main__':

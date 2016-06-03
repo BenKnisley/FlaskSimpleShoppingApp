@@ -19,6 +19,7 @@ SQL_FILE = "./model/database.db"
 ## Import product class
 import product
 
+### PRODUCT FUNCTIONS ###
 
 def productExist(ID): ## Read Only
     ## Create database connection and cursor
@@ -122,3 +123,6 @@ def getProductByID(ID): ## Read only
 
     ## Return product
     return retnProduct
+
+
+### VISITOR FUNCTIONS ###
