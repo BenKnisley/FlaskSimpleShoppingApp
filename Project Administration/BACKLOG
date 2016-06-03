@@ -1,8 +1,8 @@
-TICKET: 30, CREATED: May/31/2016, AUTHOR: Ben Knisley
-  - Create a new table in database
-    - Holds visitID, IP Addr, and timestamp
+TICKET: 30, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
+  - Create new columns in visitor table
+    - Holds visitID, IP Addr, and timestamp, lastActive
   - Store visitorID in new table
-  - Modify newVisitID function to take ip info and return ID
+  - Modify newVisitor function to take ip info
 
 TICKET: 31, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
   - In controller edit allProduct function to call 404 like taggedProducts function
@@ -10,10 +10,6 @@ TICKET: 31, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
 
 TICKET: 32, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
   - Make searchProducts function display "No results found" if searchlist is empty
-
-TICKET: 33, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
-  - Add columns into visitors table for data like ipaddr and pages visited.
-  - Edit model.newVisitor to accommodate for new columns
 
 Non ticketed
 * Make search results prioritized

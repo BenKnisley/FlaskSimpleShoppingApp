@@ -1,3 +1,7 @@
+TICKET: 29, CREATED: May/31/2016, AUTHOR: Ben Knisley
+  - Create function in model that generates a random visitor ID
+  - Give all new visitors a visitor ID instead of plain string
+
 TICKET: 28, CREATED: May/31/2016, AUTHOR: Ben Knisley
   - Give all incoming visitors a cookie
   - Named 'visit'
