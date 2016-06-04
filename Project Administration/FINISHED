@@ -1,3 +1,8 @@
+TICKET: 30, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
+  - Create new columns in visitor table
+    - Holds visitID, IP Addr, and lastActive
+  - Modify newVisitor function to take ip info
+
 TICKET: 29, CREATED: May/31/2016, AUTHOR: Ben Knisley
   - Create function in model that generates a random visitor ID
   - Give all new visitors a visitor ID instead of plain string

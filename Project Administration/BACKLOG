@@ -1,7 +1,6 @@
 TICKET: 30, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
   - Create new columns in visitor table
-    - Holds visitID, IP Addr, and timestamp, lastActive
-  - Store visitorID in new table
+    - Holds visitID, IP Addr, and lastActive
   - Modify newVisitor function to take ip info
 
 TICKET: 31, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
@@ -10,6 +9,11 @@ TICKET: 31, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
 
 TICKET: 32, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
   - Make searchProducts function display "No results found" if searchlist is empty
+
+TICKET: 33, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
+  - Add a page visit tracker
+    - Add a model.pageVisit fn
+    - and a json list entry called pageVisits into visitor table
 
 Non ticketed
 * Make search results prioritized

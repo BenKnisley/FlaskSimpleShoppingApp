@@ -27,12 +27,19 @@ def processCookie(response):
     Processes the request, if request doesnt have a visit cookie, creates a new
         one. Function returns the request with a cookie, and the visit id.
     """
-    visitCookie = request.cookies.get('visit')
-    if visitCookie == None:
-        newVisitID = model.newVisitor()
-        print  "***" + request.remote_addr
-        response.set_cookie('visit', newVisitID)
-    return response, visitCookie
+    visitID = request.cookies.get('visit')
+    if visitID == None:
+        ## Get IP Address of user
+        ipAddr = request.remote_addr
+
+        ## If new user, add entry in database and get visitID
+        visitID = model.newVisitor(ipAddr)
+
+        ## Set response with new visit cookie
+        response.set_cookie('visit', visitID)
+
+    ## Return response and visitID
+    return response, visitID
 
 ############
 #$ Routes $#

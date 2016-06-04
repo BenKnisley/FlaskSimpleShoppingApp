@@ -10,7 +10,7 @@ This file holds and controls all functions and objects related to the model.
     This file should be writen so that the database backend can be switch quickly.
 """
 ## Import sqlite
-import sqlite3, random
+import sqlite3, random, time
 
 ## Make path to database global
 #! Do best to remove hardcode
@@ -142,7 +142,7 @@ def visitor_exist(ID):
     else:
         return False
 
-def newVisitor():
+def newVisitor(ipAddr):
     ## Generate new visitorID
 
     ## Create pool of chars and numbers to select from, abd lenght of ID
@@ -156,13 +156,16 @@ def newVisitor():
     randStr = ''.join(random.choice(chars + digits) for _ in range(IDLen - 7))
     visitorID = 'visitor:' + randStr
 
+    ## Get timestamp
+    timestamp = str( int( time.time() ) )
+
 
     ## Create database connection and cursor
     conn = sqlite3.connect(SQL_FILE)
     sql = conn.cursor()
 
     ## Setup query
-    query = "INSERT INTO visitors VALUES ('%s')" % (visitorID)
+    query = "INSERT INTO visitors VALUES ('%s', '%s', '%s', '%s')" % (visitorID, timestamp, timestamp, ipAddr)
     ## Send query to database
     sql.execute(query)
 
