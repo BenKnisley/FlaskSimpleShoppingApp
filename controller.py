@@ -64,30 +64,29 @@ def index():
 ## The Product route
 @app.route('/product/<productID>')
 def product(productID):
-    ## If product exists, display product page
-    if model.productExist(productID):
-
-        ## Create new Response
-        response = Response()
-
-        ## Process cookie, and get cookied response and visitID
-        response, visitID = processCookie(response)
-
-        ## Get product object from model
-        product = model.getProductByID(productID)
-
-        ## Get html from view and product object
-        html = view.product(product)
-
-        ## Set response with html
-        response.set_data(html)
-
-        ## Return response
-        return response
-
-    ## If product does not exist, 404
-    else:
+    ## If product doesnt exists, display error page
+    if not model.productExist(productID):
         abort(404)
+
+    ## Create new Response
+    response = Response()
+
+    ## Process cookie, and get cookied response and visitID
+    response, visitID = processCookie(response)
+
+    ## Get product object from model
+    product = model.getProductByID(productID)
+
+    ## Get html from view and product object
+    html = view.product(product)
+
+    ## Set response with html
+    response.set_data(html)
+
+    ## Return response
+    return response
+
+
 
 @app.route('/test_allproducts')
 def allProducts():

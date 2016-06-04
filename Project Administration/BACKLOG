@@ -1,9 +1,3 @@
-
-
-TICKET: 31, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
-  - In controller edit allProduct function to call 404 like taggedProducts function
-  - The if nested in function, instead of if/else
-
 TICKET: 32, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
   - Make searchProducts function display "No results found" if searchlist is empty
 
