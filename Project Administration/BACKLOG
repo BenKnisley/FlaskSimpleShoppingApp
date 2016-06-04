@@ -1,7 +1,4 @@
-TICKET: 30, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
-  - Create new columns in visitor table
-    - Holds visitID, IP Addr, and lastActive
-  - Modify newVisitor function to take ip info
+
 
 TICKET: 31, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
   - In controller edit allProduct function to call 404 like taggedProducts function
