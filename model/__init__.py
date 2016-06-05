@@ -165,7 +165,7 @@ def newVisitor(ipAddr):
     sql = conn.cursor()
 
     ## Setup query
-    query = "INSERT INTO visitors VALUES ('%s', '%s', '%s', '%s', '%s')" % (visitorID, timestamp, timestamp, ipAddr, '[]')
+    query = "INSERT INTO visitors VALUES ('%s', '%s', '%s', '%s', '%s', '%s')" % (visitorID, timestamp, timestamp, ipAddr, '[]', "[]")
     ## Send query to database
     sql.execute(query)
 
@@ -208,9 +208,35 @@ def pageVisit(ID, pageTitle):
 
 ### CART FUNCTIONS ###
 
-def addToCart(productID):
-    print productID
+def addToCart(ID, productID):
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
 
+    ## Get current pageVisits
+    query = "SELECT CART FROM visitors WHERE ID='%s';" % (ID)
+    sql.execute(query)
+    data = sql.fetchone()
+
+    ## Load JSON from data
+    cart = json.loads(data[0])
+
+    ## Add productID to cart list
+    cart.append(productID)
+
+    ## Convert python to JSON string
+    jsonString = json.dumps(cart)
+
+    ## get timestamp
+    timestamp = str( int( time.time() ) )
+
+    ## Update database
+    query = "UPDATE visitors SET LASTTIME = '%s', CART = '%s' WHERE ID = '%s';" % (timestamp, jsonString, ID)
+    ## Send query to database
+    sql.execute(query)
+
+    ## Add changes to database
+    conn.commit()
 
 
 

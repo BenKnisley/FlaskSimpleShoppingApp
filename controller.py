@@ -191,11 +191,14 @@ def test():
 def addToCart():
     ## Get productId from args
     productId = request.form['p']
+    visitId = request.form['id']
+
+    print visitId
 
     ## Confirm that product exists
     if model.productExist(productId):
         ## If so, add to cart, and return 1
-        model.addToCart(productId)
+        model.addToCart(visitId, productId)
         return "1"
     ## Else return 0
     return "0"

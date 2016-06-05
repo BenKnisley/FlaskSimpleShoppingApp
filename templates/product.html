@@ -5,11 +5,17 @@
 {% block extrahead %}
   <script>
     productID = "{{product.ID|safe}}"
+
+    var regexp = new RegExp("(?:^" + "visit" + "|;\s*"+ "visit" + ")=(.*?)(?:;|$)", "g");
+    var result = regexp.exec(document.cookie);
+    visitID = (result === null) ? null : result[1];
+
+
     function addToCart(){
       xhttp = new XMLHttpRequest();
       xhttp.open("POST", "/cartadd", true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send("p=" + productID);
+      xhttp.send("p=" + productID + "&id=" + visitID);
       alert(productID + "Added to cart")
     }
   </script>
