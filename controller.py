@@ -10,6 +10,7 @@ querys the model, and sends data to the view.
 
 ## Import Flask modules
 from flask import Flask, render_template, abort, request, make_response, Response
+import datetime
 
 ## Import app modules
 import model, view
@@ -36,7 +37,7 @@ def processCookie(response):
         visitID = model.newVisitor(ipAddr)
 
         ## Set response with new visit cookie
-        response.set_cookie('visit', visitID)
+        response.set_cookie('visit', visitID, expires = (datetime.datetime.now() + datetime.timedelta(days=14)))
 
     ## Return response and visitID
     return response, visitID

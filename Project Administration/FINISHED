@@ -1,3 +1,6 @@
+TICKET: 35, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
+  - Make visitor cookie expire after 2 weeks
+
 TICKET: 34, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
   - Make model.pageVisit not add new entry if last page is same
 
