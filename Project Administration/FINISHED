@@ -1,3 +1,7 @@
+TICKET: 38, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
+  - Modify product template to have add to cart Button
+  - Make it call a new JS function called addToCart
+
 TICKET: 37, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
   - Add a addToCart model function
   - Make it print product given productID to shell

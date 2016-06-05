@@ -2,6 +2,15 @@
 
 {% block title %} {{product.name|safe}} {% endblock %}
 
+{% block extrahead %}
+  <script>
+    productID = "{{product.ID|safe}}"
+    function addToCart(){
+      alert(productID)
+    }
+  </script>
+{% endblock %}
+
 {% block heading %} {{product.name|safe}} {% endblock %}
 
 {% block content %}
@@ -13,6 +22,11 @@
   {% for tag in product.tags %}
     {{tag}}
   {% endfor %}
+
+<br>
+<br>
+<button onclick="addToCart()">Add To Cart</button>
+
 
   </p>
 {% endblock %}
