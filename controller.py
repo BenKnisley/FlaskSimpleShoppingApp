@@ -163,8 +163,13 @@ def searchProducts():
     ## Get a list of products
     products = model.getProductsBySearch(query)
 
+
+    if len(products) == 0:
+        html = view.productIndex( ("No Results Found for: '" + query + "'"), products)
+    else:
+        html = view.productIndex( ("Search results for: '" + query + "'"), products)
+
     ## Send products to productIndex template and get result
-    html = view.productIndex( ("Search results for: '" + query + "'"), products)
 
     ## Set response with html
     response.set_data(html)
