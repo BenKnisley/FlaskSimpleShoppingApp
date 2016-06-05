@@ -1,3 +1,9 @@
+TICKET: 32, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
+  - Add a page visit tracker
+    - Add a model.pageVisit fn
+      - Adds page to pageVisits and updates lastTime
+    - and a json list entry called pageVisits into visitor table
+
 TICKET: 31, CREATED: Jun/3/2016, AUTHOR: Ben Knisley
   - In controller edit product function to call 404 like taggedProducts function
   - The if nested in function, instead of if/else

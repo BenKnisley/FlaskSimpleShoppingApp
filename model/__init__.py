@@ -10,7 +10,7 @@ This file holds and controls all functions and objects related to the model.
     This file should be writen so that the database backend can be switch quickly.
 """
 ## Import sqlite
-import sqlite3, random, time
+import sqlite3, random, time, json
 
 ## Make path to database global
 #! Do best to remove hardcode
@@ -165,7 +165,7 @@ def newVisitor(ipAddr):
     sql = conn.cursor()
 
     ## Setup query
-    query = "INSERT INTO visitors VALUES ('%s', '%s', '%s', '%s')" % (visitorID, timestamp, timestamp, ipAddr)
+    query = "INSERT INTO visitors VALUES ('%s', '%s', '%s', '%s', '%s')" % (visitorID, timestamp, timestamp, ipAddr, '[]')
     ## Send query to database
     sql.execute(query)
 
@@ -174,7 +174,35 @@ def newVisitor(ipAddr):
 
     return visitorID
 
+def pageVisit(ID, pageTitle):
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
 
+    ## Get current pageVisits
+    query = "SELECT PAGEVISITS FROM visitors WHERE ID='%s';" % (ID)
+    sql.execute(query)
+    data = sql.fetchone()
+
+    ## Load JSON from data
+    pages = json.loads(data[0])
+
+    ## Add new page to JSON
+    pages.append(pageTitle)
+
+    ## Convert python to JSON string
+    jsonString = json.dumps(pages)
+
+    ## get timestamp
+    timestamp = str( int( time.time() ) )
+
+    ## Update database
+    query = "UPDATE visitors SET LASTTIME = '%s', PAGEVISITS = '%s' WHERE ID = '%s';" % (timestamp, jsonString, ID)
+    ## Send query to database
+    sql.execute(query)
+
+    ## Add changes to database
+    conn.commit()
 
 
 

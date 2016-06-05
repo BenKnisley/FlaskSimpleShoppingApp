@@ -58,6 +58,9 @@ def index():
     html = view.display("Welcome", "./model/textFiles/home.html")
     response.set_data(html)
 
+    ## Register Page Visit
+    model.pageVisit(visitID, "Home")
+
     ## Return
     return response
 
@@ -83,10 +86,11 @@ def product(productID):
     ## Set response with html
     response.set_data(html)
 
+    ## Register Page Visit
+    model.pageVisit(visitID, "product: " + product.name)
+
     ## Return response
     return response
-
-
 
 @app.route('/test_allproducts')
 def allProducts():
@@ -104,6 +108,9 @@ def allProducts():
 
     ## Set response with html
     response.set_data(html)
+
+    ## Register Page Visit
+    model.pageVisit(visitID, "All Products")
 
     ## Return response
     return response
@@ -133,6 +140,9 @@ def taggedProducts():
     ## Set response with html
     response.set_data(html)
 
+    ## Register Page Visit
+    model.pageVisit(visitID, "Tagged: " + tag)
+
     return response
 
 @app.route('/search')
@@ -158,6 +168,9 @@ def searchProducts():
 
     ## Set response with html
     response.set_data(html)
+
+    ## Register Page Visit
+    model.pageVisit(visitID, "Search: " + query)
 
     ## Return response
     return response
