@@ -1,7 +1,19 @@
-TICKET: 36, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
-  - Add a addToCart path to controller
-  - Make it take a post request, with a product argument
+TICKET: 37, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
+  - Add a addToCart model function
+  - Make it print product given productID to shell
+  - Make controller addToCart function call this function
 
+TICKET: 38, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
+  - Add a ShoppingCart column to visitor table
+  - Make it hold a json list
+  - modify model.addToCart to add to this list
+
+TICKET: 39, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
+  - Modify product template to have add to cart form
+
+TICKET: 40, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
+  - Write a JavaScript function linked to the add to cart form that
+      activates the add to cart path.
 
 Non ticketed
 * Make search results prioritized

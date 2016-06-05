@@ -1,3 +1,8 @@
+TICKET: 36, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
+  - Add a addToCart path to controller
+  - Make it take a post request, with a product argument
+  - Make it do nothing but print given productID to shell
+
 TICKET: 35, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
   - Make visitor cookie expire after 2 weeks
 

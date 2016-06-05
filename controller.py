@@ -182,6 +182,20 @@ def searchProducts():
     return response
 
 
+## JavaScript Routes
+@app.route('/cartadd', methods=['POST'])
+def addToCart():
+    productId = request.form['p']
+
+    if model.productExist(productId):
+        print productId + " added to cart"
+        return productId + " Added to Cart"
+    else:
+        return "404"
+
+    return x
+
+
 ## Run Application
 if __name__ == '__main__':
     app.run(debug=True)
