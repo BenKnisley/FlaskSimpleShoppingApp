@@ -1,8 +1,3 @@
-TICKET: 37, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
-  - Add a addToCart model function
-  - Make it print product given productID to shell
-  - Make controller addToCart function call this function
-
 TICKET: 38, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
   - Add a ShoppingCart column to visitor table
   - Make it hold a json list

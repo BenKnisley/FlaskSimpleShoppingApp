@@ -206,7 +206,10 @@ def pageVisit(ID, pageTitle):
     ## Add changes to database
     conn.commit()
 
+### CART FUNCTIONS ###
 
+def addToCart(productID):
+    print productID
 
 
 
