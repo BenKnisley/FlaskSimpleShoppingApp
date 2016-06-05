@@ -1,7 +1,3 @@
-TICKET: 39, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
-  - Write a JavaScript function linked to the add to cart form that
-      activates the add to cart path.
-
 TICKET: 40, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
   - Add a ShoppingCart column to visitor table
   - Make it hold a json list

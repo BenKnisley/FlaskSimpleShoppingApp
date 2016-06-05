@@ -181,6 +181,10 @@ def searchProducts():
     ## Return response
     return response
 
+@app.route('/x')
+def test():
+    return "<form action='/cartadd' method='post'><input name='p'></input></form>"
+
 
 ## JavaScript Routes
 @app.route('/cartadd', methods=['POST'])
@@ -192,7 +196,7 @@ def addToCart():
     if model.productExist(productId):
         ## If so, add to cart, and return 1
         model.addToCart(productId)
-        return 1
+        return "1"
     ## Else return 0
     return "0"
 

@@ -6,7 +6,11 @@
   <script>
     productID = "{{product.ID|safe}}"
     function addToCart(){
-      alert(productID)
+      xhttp = new XMLHttpRequest();
+      xhttp.open("POST", "/cartadd", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("p=" + productID);
+      alert(productID + "Added to cart")
     }
   </script>
 {% endblock %}
