@@ -238,6 +238,21 @@ def addToCart(ID, productID):
     ## Add changes to database
     conn.commit()
 
+def cartCount(ID):
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
+
+    ## Get current pageVisits
+    query = "SELECT CART FROM visitors WHERE ID='%s';" % (ID)
+    sql.execute(query)
+    data = sql.fetchone()
+
+    ## Load JSON from data
+    cart = json.loads(data[0])
+
+    ## Return the size of cartCount
+    return len(cart)
 
 
 

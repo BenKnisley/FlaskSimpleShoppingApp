@@ -2,11 +2,12 @@
   <html>
     <head>
       <title>{% block title %}{% endblock %}</title>
-      {% block extrahead %}{% endblock %}      
+      {% block extrahead %}{% endblock %}
     </head>
     <body>
       <a href="/">Home</a>
       <h1>{% block heading %}{% endblock %}</h1>
+      <p><b>Cart: {{cartcount|safe}}</b></p>
       <hr />
       {% block content %}
       {% endblock %}

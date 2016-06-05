@@ -55,8 +55,11 @@ def index():
     ## Process cookie, and get cookied response and visitID
     response, visitID = processCookie(response)
 
+    ## Get cartCount
+    cartcount = model.cartCount(visitID)
+
     ## Generate Html from template and append to response
-    html = view.display("Welcome", "./model/textFiles/home.html")
+    html = view.display("Welcome", "./model/textFiles/home.html", cartcount)
     response.set_data(html)
 
     ## Register Page Visit
@@ -78,11 +81,14 @@ def product(productID):
     ## Process cookie, and get cookied response and visitID
     response, visitID = processCookie(response)
 
+    ## Get cartCount
+    cartcount = model.cartCount(visitID)
+
     ## Get product object from model
     product = model.getProductByID(productID)
 
     ## Get html from view and product object
-    html = view.product(product)
+    html = view.product(product, cartcount)
 
     ## Set response with html
     response.set_data(html)
@@ -101,11 +107,14 @@ def allProducts():
     ## Process cookie, and get cookied response and visitID
     response, visitID = processCookie(response)
 
+    ## Get cartCount
+    cartcount = model.cartCount(visitID)
+
     ## Get a list of products
     allProducts = model.getAllProducts()
 
     ## Send products to productIndex template and get resultent html
-    html = view.productIndex("All Products", allProducts)
+    html = view.productIndex("All Products", allProducts, cartcount)
 
     ## Set response with html
     response.set_data(html)
@@ -132,11 +141,15 @@ def taggedProducts():
     ## Process cookie, and get cookied response and visitID
     response, visitID = processCookie(response)
 
+    ## Get cartCount
+    cartcount = model.cartCount(visitID)
+
+
     ## Get a list of products
     allProducts = model.getProductsWTag(tag )
 
     ## Generate html with product list
-    html = view.productIndex( ("Products with tag '" + tag + "'"), allProducts)
+    html = view.productIndex( ("Products with tag '" + tag + "'"), allProducts, cartcount)
 
     ## Set response with html
     response.set_data(html)
@@ -161,14 +174,18 @@ def searchProducts():
     ## Process cookie, and get cookied response and visitID
     response, visitID = processCookie(response)
 
+    ## Get cartCount
+    cartcount = model.cartCount(visitID)
+
+
     ## Get a list of products
     products = model.getProductsBySearch(query)
 
 
     if len(products) == 0:
-        html = view.productIndex( ("No Results Found for: '" + query + "'"), products)
+        html = view.productIndex( ("No Results Found for: '" + query + "'"), products, cartcount)
     else:
-        html = view.productIndex( ("Search results for: '" + query + "'"), products)
+        html = view.productIndex( ("Search results for: '" + query + "'"), products, cartcount)
 
     ## Send products to productIndex template and get result
 
