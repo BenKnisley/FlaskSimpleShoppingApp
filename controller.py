@@ -190,9 +190,11 @@ def addToCart():
 
     ## Confirm that product exists
     if model.productExist(productId):
-        ## If so, add to cart
+        ## If so, add to cart, and return 1
         model.addToCart(productId)
-    ## Else do nothing
+        return 1
+    ## Else return 0
+    return "0"
 
 
 ## Run Application
