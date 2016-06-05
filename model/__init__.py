@@ -187,8 +187,10 @@ def pageVisit(ID, pageTitle):
     ## Load JSON from data
     pages = json.loads(data[0])
 
-    ## Add new page to JSON
-    pages.append(pageTitle)
+    ## Only if page title is not the same as last page
+    if (len(pages) == 0) or (pages[len(pages) - 1] != pageTitle):
+        ## Add new page to JSON
+        pages.append(pageTitle)
 
     ## Convert python to JSON string
     jsonString = json.dumps(pages)
