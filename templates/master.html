@@ -7,7 +7,7 @@
     <body>
       <a href="/">Home</a>
       <h1>{% block heading %}{% endblock %}</h1>
-      <p><b>Cart: {{cartcount|safe}}</b></p>
+      <p><b>Cart: <span id='cartcount'>{{cartcount|safe}}</span></b></p>
       <hr />
       {% block content %}
       {% endblock %}

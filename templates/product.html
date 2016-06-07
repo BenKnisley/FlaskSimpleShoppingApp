@@ -16,7 +16,11 @@
       xhttp.open("POST", "/cartadd", true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send("p=" + productID + "&id=" + visitID);
-      alert(productID + "Added to cart")
+
+      cartcount = document.getElementById("cartcount");
+      cartValue = parseInt(cartcount.innerHTML);
+      newCartValue = cartValue + 1;
+      cartcount.innerHTML = newCartValue.toString()
     }
   </script>
 {% endblock %}
