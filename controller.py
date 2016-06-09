@@ -99,7 +99,7 @@ def product(productID):
     ## Return response
     return response
 
-@app.route('/test_allproducts')
+@app.route('/allproducts')
 def allProducts():
     ## Create new Response
     response = Response()
@@ -125,7 +125,7 @@ def allProducts():
     ## Return response
     return response
 
-@app.route('/test_taggedproducts')
+@app.route('/tagged')
 def taggedProducts():
 
     ## Get tag
@@ -198,9 +198,26 @@ def searchProducts():
     ## Return response
     return response
 
-@app.route('/x')
-def test():
-    return "<form action='/cartadd' method='post'><input name='p'></input></form>"
+@app.route('/cart')
+def cart():
+    ## Create new Response
+    response = Response()
+
+    ## Process cookie, and get cookied response and visitID
+    response, visitID = processCookie(response)
+
+    ## Get cartCount
+    cartcount = model.cartCount(visitID)
+
+    ## Get Items in cart
+
+
+
+    ## Register Page Visit
+    model.pageVisit(visitID, "cart")
+
+    ## Return
+    return response
 
 
 ## JavaScript Routes

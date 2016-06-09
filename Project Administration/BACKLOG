@@ -1,6 +1,3 @@
-TICKET: 43, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
-  - Add a Shopping cart page that displays all the items in the cart.
-
 TICKET: 44, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
   - Make the cart link in the master template link to cart page
 

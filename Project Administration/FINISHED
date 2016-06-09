@@ -1,3 +1,6 @@
+TICKET: 43, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
+  - Add a blank Shopping cart page in controller 
+
 TICKET: 42, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
   - Modify addtocart JS function to increment cart count
 
