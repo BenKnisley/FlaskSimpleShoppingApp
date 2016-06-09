@@ -1,5 +1,14 @@
 TICKET: 44, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
   - Make the cart link in the master template link to cart page
 
+TICKET: 45, CREATED: Jun/8/2016, AUTHOR: Ben Knisley
+  - Add a getProductsInCart to model
+
+TICKET: 46, CREATED: Jun/8/2016, AUTHOR: Ben Knisley
+  - Make a cart teplate i modify the index template
+
+
+
+
 Non ticketed
 * Make search results prioritized
