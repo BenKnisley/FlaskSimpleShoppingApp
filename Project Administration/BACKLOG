@@ -1,11 +1,9 @@
-TICKET: 44, CREATED: Jun/5/2016, AUTHOR: Ben Knisley
-  - Make the cart link in the master template link to cart page
-
 TICKET: 45, CREATED: Jun/8/2016, AUTHOR: Ben Knisley
   - Add a getProductsInCart to model
+  - Make it return product objects
 
 TICKET: 46, CREATED: Jun/8/2016, AUTHOR: Ben Knisley
-  - Make a cart teplate i modify the index template
+  - Make a cart template modifying the index template
 
 
 
