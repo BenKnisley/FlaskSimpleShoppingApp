@@ -212,8 +212,22 @@ def cart():
     ## Get Items in cart
     products = model.getProductsInCart(visitID)
 
+    ## Compute subtotal, tax, and total
+    subtotal = 0
+    for product in products:
+        subtotal += product.price
+    tax = int(0.07 * subtotal)
+    total = subtotal + tax
+
+    ## Convert to useful string
+    subtotal = ('{:.2f}'.format(subtotal/100.))
+    tax = ('{:.2f}'.format(tax/100.))
+    total = ('{:.2f}'.format(total/100.))
+
+
+
     ## Send product list to render template
-    html = view.productIndex( "Products in Cart", products, cartcount)
+    html = view.cart(products, subtotal, tax, total, cartcount)
 
     ## Set response with html
     response.set_data(html)

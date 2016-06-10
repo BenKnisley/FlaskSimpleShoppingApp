@@ -48,3 +48,13 @@ def productIndex(title, products, cartcount):
 
     ## Returns result
     return html
+
+
+def cart(products, subtotal, tax, total, cartcount):
+    """
+    """
+    ## Route given title and products list to productIndex template
+    html = render_template("cart.html", products=products, subtotal=subtotal, tax=tax, total=total, cartcount=cartcount)
+
+    ## Returns result
+    return html
