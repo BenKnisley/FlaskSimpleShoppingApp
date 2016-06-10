@@ -210,8 +210,13 @@ def cart():
     cartcount = model.cartCount(visitID)
 
     ## Get Items in cart
+    products = model.getProductsInCart(visitID)
 
+    ## Send product list to render template
+    html = view.productIndex( "Products in Cart", products, cartcount)
 
+    ## Set response with html
+    response.set_data(html)
 
     ## Register Page Visit
     model.pageVisit(visitID, "cart")

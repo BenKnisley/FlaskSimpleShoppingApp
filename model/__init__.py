@@ -254,6 +254,31 @@ def cartCount(ID):
     ## Return the size of cartCount
     return len(cart)
 
+def getProductsInCart(ID):
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
+
+    ## Get current pageVisits
+    query = "SELECT CART FROM visitors WHERE ID='%s';" % (ID)
+    sql.execute(query)
+    data = sql.fetchone()
+
+    ## Load JSON from data
+    productIDs = json.loads(data[0])
+
+    ## Create list to hold products objects
+    productList = list()
+
+    ## Convert ID to products and add to productList
+    for newID in productIDs:
+        productList.append( getProductByID(newID) )
+
+    ## Return products
+    return productList
+
+
+
 
 
 

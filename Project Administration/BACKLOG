@@ -1,7 +1,3 @@
-TICKET: 45, CREATED: Jun/8/2016, AUTHOR: Ben Knisley
-  - Add a getProductsInCart to model
-  - Make it return product objects
-
 TICKET: 46, CREATED: Jun/8/2016, AUTHOR: Ben Knisley
   - Make a cart template modifying the index template
 
