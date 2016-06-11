@@ -1,3 +1,7 @@
+TICKET: 51, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
+  - Add a processCC path into controller under JS section
+  - Make it return success 
+
 TICKET: 50, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
   - Create a new template for checkout page, add a entry into view
 

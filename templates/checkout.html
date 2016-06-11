@@ -7,27 +7,28 @@
 {% block extrahead %}
 <script>
   function CCProcess(){
-    // Confirm all forms are filled out, inval = true means problem
-    if(document.getElementById("ccnum").value.length != 20 ){
-        document.getElementById("ccnum_text").style.color = 'red';
-        inval = true;
-    }else{
-      document.getElementById("ccnum_text").style.color = 'black';
+    // Change text and disable button to prevent reclick
+    document.getElementById("purchase").textContent = "Processing"
+    document.getElementById("purchase").disabled = true;
+
+    // Get data from forms
+    ccnum = document.getElementById("ccnum").value
+    expr = document.getElementById("exdate").value
+    cvv = document.getElementById("cvv").value
+
+    // Summit data to processcard
+    xhttp = new XMLHttpRequest();
+
+    // Setup what happens when call is done
+    xhttp.onreadystatechange = function () {
+        if(xhttp.responseText == "0"){
+          window.location.href = "/thanks"
+        }
     }
 
-    if(document.getElementById("exdate").value.length != 4 ){
-        document.getElementById("exdate_text").style.color = 'red';
-        inval = true;
-        //return 1;
-    }else{
-      document.getElementById("exdate_text").style.color = 'black';
-    }
-    if(document.getElementById("cvv").value.length != 3 ){
-        document.getElementById("cvv_text").style.color = 'red';
-        inval = true;
-    }else{
-      document.getElementById("cvv_text").style.color = 'black';
-    }
+    xhttp.open("POST", "/processcard", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("card=" + ccnum + "&expr=" + expr+ "&cvv=" + cvv);
 
 
 
@@ -67,7 +68,7 @@
   <br><br>
 
 </form>
-<button onclick='CCProcess()'>Purchase</button>
+<button id='purchase' onclick='CCProcess()'>Purchase</button>
 
 
 {% endblock %}

@@ -1,10 +1,6 @@
-TICKET: 51, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
-  - Add a processCC path into controller under JS section
-
 TICKET: 52, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
   - Create entry into textfiles, for thank you page and display it with
       Display template
-
 
 Non ticketed
 * Make search results prioritized

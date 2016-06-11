@@ -315,14 +315,26 @@ def addToCart():
     productId = request.form['p']
     visitId = request.form['id']
 
-    print visitId
-
     ## Confirm that product exists
     if model.productExist(productId):
         ## If so, add to cart, and return 1
         model.addToCart(visitId, productId)
         return "1"
     ## Else return 0
+    return "0"
+
+@app.route('/processcard', methods=['POST'])
+def processcard():
+    ## Get productId from args
+    cardnumber = request.form['card']
+    expr = request.form['expr']
+    cvv = request.form['cvv']
+
+    ## Confirm card number passes Luhn checksum
+    print model.luhnChecksumPass(cardnumber)
+
+
+
     return "0"
 
 
