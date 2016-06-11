@@ -256,9 +256,21 @@ def checkout():
     if cartcount == 0:
         return redirect("/cart", code=302)
 
+    ## Compute subtotal, tax, and total
+    subtotal = 0
+    for product in products:
+        subtotal += product.price
+    tax = int(0.07 * subtotal)
+    total = subtotal + tax
+
+    ## Convert to useful string
+    subtotal = ('{:.2f}'.format(subtotal/100.))
+    tax = ('{:.2f}'.format(tax/100.))
+    total = ('{:.2f}'.format(total/100.))
+
 
     ## Send product list to render template
-    html = "Checkout"
+    html = view.checkout(products, subtotal, tax, total, cartcount)
 
     ## Set response with html
     response.set_data(html)

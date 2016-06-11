@@ -1,13 +1,13 @@
-TICKET: 50, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
-  - Create a new template for checkout page, add a entry into view
+TICKET: 51, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
+  - Add a processCC path into controller under JS section
 
-TICKET: 51, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
+TICKET: 52, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
   - Create entry into textfiles, for thank you page and display it with
       Display template
-
 
 
 Non ticketed
 * Make search results prioritized
 
+Expiration
 * Document new functions in view

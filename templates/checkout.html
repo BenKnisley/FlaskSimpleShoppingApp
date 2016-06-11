@@ -1,8 +1,41 @@
 {% extends "master.html" %}
 
-{% block title %} Cart {% endblock %}
+{% block title %} Checkout {% endblock %}
 
-{% block heading %} Cart {% endblock %}
+{% block heading %} Checkout {% endblock %}
+
+{% block extrahead %}
+<script>
+  function CCProcess(){
+    // Confirm all forms are filled out, inval = true means problem
+    if(document.getElementById("ccnum").value.length != 20 ){
+        document.getElementById("ccnum_text").style.color = 'red';
+        inval = true;
+    }else{
+      document.getElementById("ccnum_text").style.color = 'black';
+    }
+
+    if(document.getElementById("exdate").value.length != 4 ){
+        document.getElementById("exdate_text").style.color = 'red';
+        inval = true;
+        //return 1;
+    }else{
+      document.getElementById("exdate_text").style.color = 'black';
+    }
+    if(document.getElementById("cvv").value.length != 3 ){
+        document.getElementById("cvv_text").style.color = 'red';
+        inval = true;
+    }else{
+      document.getElementById("cvv_text").style.color = 'black';
+    }
+
+
+
+
+
+  }
+</script>
+{% endblock %}
 
 {% block content %}
 
@@ -21,6 +54,20 @@
 <p><b>Subtotal:</b> ${{subtotal}}</p>
 <p><b>Tax:</b> ${{tax}}</p>
 <p><b>Total:</b> ${{total}}</p>
-<button onclick='window.location.href = "/checkout";'>Proceed to Checkout</button>
+<br>
+
+<form>
+  <span id=ccnum_text>Credit Card Number:</span> <input id='ccnum' type=text>
+  <br><br>
+
+  <span id='exdate_text'>Expiration Date:</span> <input id='exdate' type='text'>
+  <br><br>
+
+  <span id='cvv_text'>CVV:</span> <input id='cvv'>
+  <br><br>
+
+</form>
+<button onclick='CCProcess()'>Purchase</button>
+
 
 {% endblock %}
