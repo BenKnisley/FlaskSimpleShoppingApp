@@ -1,13 +1,13 @@
-TICKET: 47, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
-  - Add a blank checkout and a thank you page in the controller
-
 TICKET: 48, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
   - Make "proceed to checkout" button in cart button link to checkout page
 
 TICKET: 49, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
-  - Create a new template for checkout page, add a entry into view
+  - Make checkout page link back to cart if cart is empty
 
 TICKET: 50, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
+  - Create a new template for checkout page, add a entry into view
+
+TICKET: 51, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
   - Create entry into textfiles, for thank you page and display it with
       Display template
 

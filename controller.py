@@ -238,6 +238,58 @@ def cart():
     ## Return
     return response
 
+@app.route('/checkout')
+def checkout():
+    ## Create new Response
+    response = Response()
+
+    ## Process cookie, and get cookied response and visitID
+    response, visitID = processCookie(response)
+
+    ## Get cartCount
+    cartcount = model.cartCount(visitID)
+
+    ## Get Items in cart
+    products = model.getProductsInCart(visitID)
+
+    ## Send product list to render template
+    html = "Hello World"
+
+    ## Set response with html
+    response.set_data(html)
+
+    ## Register Page Visit
+    model.pageVisit(visitID, "Checkout")
+
+    ## Return
+    return response
+
+
+@app.route('/thanks')
+def thanks():
+    ## Create new Response
+    response = Response()
+
+    ## Process cookie, and get cookied response and visitID
+    response, visitID = processCookie(response)
+
+    ## Get cartCount
+    cartcount = model.cartCount(visitID)
+
+    ## Get Items in cart
+    products = model.getProductsInCart(visitID)
+
+    ## Send product list to render template
+    html = "Thanks"
+
+    ## Set response with html
+    response.set_data(html)
+
+    ## Register Page Visit
+    model.pageVisit(visitID, "Thanks")
+
+    ## Return
+    return response
 
 ## JavaScript Routes
 @app.route('/cartadd', methods=['POST'])
