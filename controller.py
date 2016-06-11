@@ -257,7 +257,7 @@ def checkout():
         return redirect("/cart", code=302)
 
 
-    ## Send product list to render templat
+    ## Send product list to render template
     html = "Checkout"
 
     ## Set response with html
