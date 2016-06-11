@@ -253,7 +253,7 @@ def checkout():
     products = model.getProductsInCart(visitID)
 
     ## Send product list to render template
-    html = "Hello World"
+    html = "Checkout"
 
     ## Set response with html
     response.set_data(html)

@@ -1,6 +1,3 @@
-TICKET: 48, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
-  - Make "proceed to checkout" button in cart button link to checkout page
-
 TICKET: 49, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
   - Make checkout page link back to cart if cart is empty
 
