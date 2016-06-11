@@ -9,7 +9,7 @@ querys the model, and sends data to the view.
 """
 
 ## Import Flask modules
-from flask import Flask, render_template, abort, request, make_response, Response
+from flask import Flask, render_template, abort, request, make_response, Response, redirect
 import datetime
 
 ## Import app modules
@@ -252,7 +252,12 @@ def checkout():
     ## Get Items in cart
     products = model.getProductsInCart(visitID)
 
-    ## Send product list to render template
+    ## If cart is empty redirect to cart
+    if cartcount == 0:
+        return redirect("/cart", code=302)
+
+
+    ## Send product list to render templat
     html = "Checkout"
 
     ## Set response with html

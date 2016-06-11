@@ -1,6 +1,3 @@
-TICKET: 49, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
-  - Make checkout page link back to cart if cart is empty
-
 TICKET: 50, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
   - Create a new template for checkout page, add a entry into view
 
