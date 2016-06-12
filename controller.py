@@ -293,17 +293,12 @@ def thanks():
     ## Get cartCount
     cartcount = model.cartCount(visitID)
 
-    ## Get Items in cart
-    products = model.getProductsInCart(visitID)
-
-    ## Send product list to render template
-    html = "Thanks"
-
-    ## Set response with html
+    ## Generate Html from template and append to response
+    html = view.display("Thank You for Your Business", "./model/textFiles/thanks.html", cartcount)
     response.set_data(html)
 
     ## Register Page Visit
-    model.pageVisit(visitID, "Thanks")
+    model.pageVisit(visitID, "Home")
 
     ## Return
     return response

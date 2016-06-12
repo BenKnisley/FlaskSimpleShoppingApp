@@ -1,9 +1,9 @@
-TICKET: 52, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
-  - Create entry into textfiles, for thank you page and display it with
-      Display template
+TICKET: 53, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
+  - Add processCard to model, make it account for most common errors
+
+TICKET: 54, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
+  - Add clearCart to model
 
 Non ticketed
 * Make search results prioritized
-
-Expiration
 * Document new functions in view
