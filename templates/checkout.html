@@ -7,9 +7,11 @@
 {% block extrahead %}
 <script>
   function CCProcess(){
-    // Change text and disable button to prevent reclick
-    document.getElementById("purchase").textContent = "Processing"
-    document.getElementById("purchase").disabled = true;
+
+    // Reset color values
+    document.getElementById("ccnum_text").style.color = "black";
+    document.getElementById("exdate_text").style.color = "black";
+    document.getElementById("cvv_text").style.color = "black";
 
     // Get data from forms
     ccnum = document.getElementById("ccnum").value
@@ -20,9 +22,17 @@
     xhttp = new XMLHttpRequest();
 
     // Setup what happens when call is done
-    xhttp.onreadystatechange = function () {
-        if(xhttp.responseText == "0"){
-          window.location.href = "/thanks"
+    xhttp.onreadystatechange = function() {
+        // Get response code
+        responsecode = xhttp.responseText;
+        if(responsecode == "0"){
+          window.location.href = "/thanks";
+        }else if(responsecode == "1"){
+          document.getElementById("ccnum_text").style.color = "red";
+        }else if(responsecode == "2"){
+          document.getElementById("exdate_text").style.color = "red";
+        }else if(responsecode == "3"){
+          document.getElementById("cvv_text").style.color = "red";
         }
     }
 

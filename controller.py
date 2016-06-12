@@ -331,7 +331,30 @@ def processcard():
     cvv = request.form['cvv']
 
     ## Confirm card number passes Luhn checksum
-    print model.luhnChecksumPass(cardnumber)
+    if not model.luhnChecksumPass(cardnumber):
+        ## 1 indicates that it is the cc number is invalid before using stripe
+        return "1"
+
+    ## Date pretest
+    if not len(expr) == 4:
+        ## 2 means bad date
+        return "2"
+
+    mon = expr[:2]
+    year = "20" + expr[2:]
+
+    if int(mon) < 1 or int(mon) > 12:
+         return "2"
+    if int(mon) < 1 or int(mon) > 12:
+         return "2"
+    if int(year) < datetime.date.today().year:
+        return "2"
+
+    ## CVV pretest
+    if not len(cvv) in [3,4]:
+        ## 3 indicates bad cvv
+        return "3"
+
 
 
 
