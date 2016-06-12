@@ -13,6 +13,11 @@
     document.getElementById("exdate_text").style.color = "black";
     document.getElementById("cvv_text").style.color = "black";
 
+    // Get visitID from cookies
+    var regexp = new RegExp("(?:^" + "visit" + "|;\s*"+ "visit" + ")=(.*?)(?:;|$)", "g");
+    var result = regexp.exec(document.cookie);
+    visitID = (result === null) ? null : result[1];
+
     // Get data from forms
     ccnum = document.getElementById("ccnum").value
     expr = document.getElementById("exdate").value
@@ -33,12 +38,14 @@
           document.getElementById("exdate_text").style.color = "red";
         }else if(responsecode == "3"){
           document.getElementById("cvv_text").style.color = "red";
+        }else if(responsecode == "4"){
+          alert("Card Declined!")
         }
     }
 
     xhttp.open("POST", "/processcard", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("card=" + ccnum + "&expr=" + expr+ "&cvv=" + cvv);
+    xhttp.send("id="+ visitID + "&card=" + ccnum + "&expr=" + expr+ "&cvv=" + cvv);
 
 
 

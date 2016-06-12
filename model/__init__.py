@@ -10,7 +10,7 @@ This file holds and controls all functions and objects related to the model.
     This file should be writen so that the database backend can be switch quickly.
 """
 ## Import sqlite
-import sqlite3, random, time, json
+import sqlite3, random, time, json, stripe
 
 ## Make path to database global
 #! Do best to remove hardcode
@@ -283,7 +283,7 @@ def getProductsInCart(ID):
 def luhnChecksumPass(card_number):
     """
     """
-    
+
     sum = 0
     num_digits = len(card_number)
     oddeven = num_digits & 1
@@ -300,8 +300,34 @@ def luhnChecksumPass(card_number):
 
     return ( (sum % 10) == 0 )
 
+def processCard(ID, number, month, year, cvv):
+    '''
+    '''
 
+    ## Get Items in cart
+    products = getProductsInCart(ID)
 
+    ## Calulate price
+    subtotal = 0
+    for product in products:
+        subtotal += product.price
+    tax = int(0.07 * subtotal)
+    total = subtotal + tax
+
+    ## Get Stripe Key
+    stripe.api_key = open('./stripekey.txt', 'r').read().rstrip()
+
+    ## Try Card charge
+    try:
+        chargeData = stripe.Charge.create(
+            amount=total,
+            currency="usd",
+            source={"number": number, "exp_month": month, "exp_year": year, "cvc": cvv}, description="Stripe Test 1"
+        )
+    except stripe.error.CardError as e:
+        return False
+
+    return True
 
 
 

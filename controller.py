@@ -320,7 +320,8 @@ def addToCart():
 
 @app.route('/processcard', methods=['POST'])
 def processcard():
-    ## Get productId from args
+    ## Get data from args
+    visitId = request.form['id']
     cardnumber = request.form['card']
     expr = request.form['expr']
     cvv = request.form['cvv']
@@ -349,6 +350,14 @@ def processcard():
     if not len(cvv) in [3,4]:
         ## 3 indicates bad cvv
         return "3"
+
+    ## Proceed to process card
+    success = model.processCard(visitId, cardnumber, int(mon), int(year), cvv)
+
+    if not success:
+        return "4"
+
+
 
 
 

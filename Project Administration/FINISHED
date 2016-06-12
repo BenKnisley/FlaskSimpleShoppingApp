@@ -1,3 +1,11 @@
+MILESTONE: Takes Credit cards Info
+  - Controller takes ID from url.
+  - Model returns its existence and its data.
+  - View renders it to display.
+
+TICKET: 53, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
+  - Add processCard to model, make it account for most common errors
+
 TICKET: 52, CREATED: Jun/9/2016, AUTHOR: Ben Knisley
   - Create entry into textfiles, for thank you page and display it with
       Display template
