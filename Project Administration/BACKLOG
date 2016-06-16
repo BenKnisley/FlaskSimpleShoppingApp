@@ -1,5 +1,8 @@
-TICKET: 55, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
-  - Add a new database table for orders and charges
+TICKET: 56, CREATED: Jun/15/2016, AUTHOR: Ben Knisley
+  - Add more forms to checkout template. Name, email, shipping addr, etc..
+
+TICKET: 57, CREATED: Jun/15/2016, AUTHOR: Ben Knisley
+  - Upon checkout add detailed order info into database
 
 Non ticketed
 * Make search results prioritized

@@ -1,3 +1,7 @@
+TICKET: 55, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
+  - Add a new database table for orders and charges
+  - Name, email, addr, credit card hash, last four CC num,
+
 TICKET: 54, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
   - Add clearCart to model
   - Make controller call it upon successful charge
