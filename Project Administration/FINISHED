@@ -1,3 +1,7 @@
+TICKET: 54, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
+  - Add clearCart to model
+  - Make controller call it upon successful charge
+
 MILESTONE: Takes Credit cards Info
   - Controller takes ID from url.
   - Model returns its existence and its data.

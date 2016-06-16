@@ -355,8 +355,11 @@ def processcard():
     success = model.processCard(visitId, cardnumber, int(mon), int(year), cvv)
 
     if not success:
+        ## Return 4 if card declined
         return "4"
 
+    ## Clear cart
+    model.clearCart(visitId)
 
 
 

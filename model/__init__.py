@@ -277,6 +277,18 @@ def getProductsInCart(ID):
     ## Return products
     return productList
 
+def clearCart(ID):
+    ## Create database connection and cursor
+    conn = sqlite3.connect(SQL_FILE)
+    sql = conn.cursor()
+
+    ## Update database
+    query = "UPDATE visitors SET CART = '%s' WHERE ID = '%s';" % ('[]', ID)
+    ## Send query to database
+    sql.execute(query)
+
+    ## Add changes to database
+    conn.commit()
 
 ## CREDIT CARD FUNCTIONS ##
 

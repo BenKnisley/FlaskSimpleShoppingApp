@@ -1,6 +1,3 @@
-TICKET: 54, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
-  - Add clearCart to model
-
 TICKET: 55, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
   - Add a new database table for orders and charges
 
