@@ -1,7 +1,13 @@
-TICKET: 56, CREATED: Jun/15/2016, AUTHOR: Ben Knisley
-  - Add more forms to checkout template. Name, email, shipping addr, etc..
+TICKET: 58, CREATED: Jun/15/2016, AUTHOR: Ben Knisley
+  - Add model.addOrder function
 
-TICKET: 57, CREATED: Jun/15/2016, AUTHOR: Ben Knisley
+TICKET: 59, CREATED: Jun/15/2016, AUTHOR: Ben Knisley
+  - Make controller.processcard process extra input from new forms and
+      return error if wrong. Do NOT add to database as no model functions
+      exist to process that data.
+  - Make checkout JS respond to returned error codes
+
+TICKET: 60, CREATED: Jun/15/2016, AUTHOR: Ben Knisley
   - Upon checkout add detailed order info into database
 
 Non ticketed

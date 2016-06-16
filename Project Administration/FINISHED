@@ -1,3 +1,6 @@
+TICKET: 56, CREATED: Jun/15/2016, AUTHOR: Ben Knisley
+  - Add more forms to checkout template. Name, email, shipping addr, etc..
+
 TICKET: 55, CREATED: Jun/11/2016, AUTHOR: Ben Knisley
   - Add a new database table for orders and charges
   - Name, email, addr, credit card hash, last four CC num,

@@ -19,6 +19,9 @@
     visitID = (result === null) ? null : result[1];
 
     // Get data from forms
+    name = document.getElementById("name").value
+    email = document.getElementById("email").value
+    addr = document.getElementById("addr").value
     ccnum = document.getElementById("ccnum").value
     expr = document.getElementById("exdate").value
     cvv = document.getElementById("cvv").value
@@ -45,7 +48,7 @@
 
     xhttp.open("POST", "/processcard", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("id="+ visitID + "&card=" + ccnum + "&expr=" + expr+ "&cvv=" + cvv);
+    xhttp.send("id="+ visitID + "&card=" + ccnum + "&expr=" + expr + "&cvv=" + cvv + "&name=" + name + "&email=" + email + "&addr=" + addr);
 
 
 
@@ -75,6 +78,15 @@
 <br>
 
 <form>
+  <span id=name_text>Name:</span> <input id='name' type=text>
+  <br><br>
+
+  <span id=email_text>Email:</span> <input id='email' type=text>
+  <br><br>
+
+  <span id=addr_text>Address:</span> <input id='addr' type=text>
+  <br><br>
+
   <span id=ccnum_text>Credit Card Number:</span> <input id='ccnum' type=text>
   <br><br>
 
