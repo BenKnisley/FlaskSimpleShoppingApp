@@ -342,7 +342,10 @@ def processCard(ID, number, month, year, cvv):
     return True
 
 
+## ORDER FUNCTIONS ##
 
+def addOrder(*args):
+    None
 
 
 

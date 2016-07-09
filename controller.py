@@ -281,7 +281,6 @@ def checkout():
     ## Return
     return response
 
-
 @app.route('/thanks')
 def thanks():
     ## Create new Response

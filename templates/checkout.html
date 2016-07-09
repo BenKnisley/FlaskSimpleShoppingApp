@@ -8,23 +8,30 @@
 <script>
   function CCProcess(){
 
-    // Reset color values
-    document.getElementById("ccnum_text").style.color = "black";
-    document.getElementById("exdate_text").style.color = "black";
-    document.getElementById("cvv_text").style.color = "black";
-
     // Get visitID from cookies
     var regexp = new RegExp("(?:^" + "visit" + "|;\s*"+ "visit" + ")=(.*?)(?:;|$)", "g");
     var result = regexp.exec(document.cookie);
     visitID = (result === null) ? null : result[1];
 
+    // Reset all forms color values
+    document.getElementById("name_text").style.color = "black";
+    document.getElementById("email_text").style.color = "black";
+    document.getElementById("addr_text").style.color = "black";
+    document.getElementById("ccnum_text").style.color = "black";
+    document.getElementById("exdate_text").style.color = "black";
+    document.getElementById("cvv_text").style.color = "black";
+
     // Get data from forms
     name = document.getElementById("name").value
     email = document.getElementById("email").value
     addr = document.getElementById("addr").value
+
     ccnum = document.getElementById("ccnum").value
     expr = document.getElementById("exdate").value
     cvv = document.getElementById("cvv").value
+
+
+  
 
     // Summit data to processcard
     xhttp = new XMLHttpRequest();
@@ -43,7 +50,6 @@
           document.getElementById("cvv_text").style.color = "red";
         }else if(responsecode == "4"){
           alert("Card Declined!")
-        }
     }
 
     xhttp.open("POST", "/processcard", true);
